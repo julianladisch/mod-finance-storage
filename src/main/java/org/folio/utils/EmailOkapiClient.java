@@ -20,10 +20,9 @@ public class EmailOkapiClient extends OkapiClient {
     post(url, data)
       .onSuccess(response -> {
         logger.info("POST {} complete successfully: {}", url, response);
-        close();})
+      })
       .onFailure(t -> {
         logger.error("Email not delivered {}", t.getMessage());
-        close();
       });
   }
 }
